@@ -599,4 +599,13 @@ public class WindowManager: NSObject, NSWindowDelegate {
             onEvent!(eventName)
         }
     }
+    
+    public func window(_ window: NSWindow, willUseFullScreenPresentationOptions proposedOptions: NSApplication.PresentationOptions = []) -> NSApplication.PresentationOptions {
+        return [
+            NSApplication.PresentationOptions.fullScreen,
+            NSApplication.PresentationOptions.autoHideToolbar,
+            NSApplication.PresentationOptions.autoHideMenuBar,
+            NSApplication.PresentationOptions.autoHideDock,
+        ]
+    }
 }
